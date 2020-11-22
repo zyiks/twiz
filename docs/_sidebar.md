@@ -14,4 +14,4 @@
   - [Stronghold Coin Gain Calculation](strongholdcoin.md)
   - [Getting CIRC List](circlist.md)
   - [Using Live Conquers](conquers.md)
-  - [Generating World Maps](worlds.md)
+  - [Generating World Maps](maps.md)
