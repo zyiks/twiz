@@ -12,7 +12,7 @@ Features:
 * Player Lookup
 * Tribe Lookup
 * Report Image Posting
-* OD Graphs
+* Graph Generation
 * Stronghold coin gain calculation
 * CIRC Lists
 * Live tribe conquer alerts
