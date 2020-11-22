@@ -1,6 +1,6 @@
 - Getting started
 
-  - [About](readme.md)
+  - [About]()
   - [Quick Start Guide](quickstartguide.md)
   
 - Guides
