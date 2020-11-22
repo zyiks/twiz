@@ -1,4 +1,6 @@
-# Quick Start Guide
+# Basic configuration
+
+*You need "Manage Server" or "Administrator" permissions to use these commands.*
 
 ### Configuring command prefix
 
