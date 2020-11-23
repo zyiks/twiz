@@ -15,3 +15,4 @@
   - [Getting CIRC List](circlist.md)
   - [Using Live Conquers](conquers.md)
   - [Generating World Maps](maps.md)
+  - [Jokes](joke.md)
