@@ -64,3 +64,5 @@ The first parameter, **tribe or player**, lets you specify whetever you are look
 The second parameter, **who**, is a **comma "," seperated** list of players or tribes you want to generate the graph about.
 
 - eg.  The Sleepless Elite,gpttkftkf,Yoghurt BabaYaga
+
+![Example](images/odgraph/1.png "Example")
