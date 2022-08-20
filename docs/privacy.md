@@ -4,7 +4,7 @@
 ### WHAT END USER DATA DO WE STORE?
 
 We do not store any personally identifiable data.
-We may store partial command content and snowflake IDs for any slash commands you use.
+We may store partial command content and snowflake IDs for any commands you use.
 
 ### WHO DO WE SHARE DATA WITH?
 
