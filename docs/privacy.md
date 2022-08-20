@@ -4,7 +4,10 @@
 ### WHAT END USER DATA DO WE STORE?
 
 We do not store any personally identifiable data.
+
 We may store partial command content and snowflake IDs for any commands you use.
+
+Regular messages are parsed during runtime and do not get recorded. 
 
 ### WHO DO WE SHARE DATA WITH?
 
@@ -16,7 +19,7 @@ Any other data we store connected to a guild or channel is deleted when the bot 
 
 ### HOW CAN I CONTACT YOU IF I HAVE CONCERNS ABOUT YOUR BOT?
 
-If you have any concerns you can contact us in the forum thread or send me a DM on the website (https://forum.tribalwars.net/index.php?threads/twiz-unofficial-discord-bot.283086/)
+If you have any concerns you can contact me in the forum thread or send me a DM on the website (https://forum.tribalwars.net/index.php?threads/twiz-unofficial-discord-bot.283086/)
 
 ### HOW CAN I REQUEST DATA TO BE REMOVED?
 
