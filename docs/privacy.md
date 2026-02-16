@@ -1,26 +1,104 @@
-# PRIVACY POLICY
-#### Last updated and effective: 20 August 2022
+# TWiz Privacy Policy
 
-### WHAT END USER DATA DO WE STORE?
+Last updated: 2026-02-16
 
-We do not store any personally identifiable data.
+This Privacy Policy explains what data TWiz ("TWiz", "the Bot", "Service") processes, why it is processed, and your choices.
 
-We may store partial command content and snowflake IDs for any commands you use.
+## 1. Who This Applies To
 
-Regular messages are parsed during runtime and do not get recorded. 
+This policy applies to people who use TWiz through Discord servers, commands, and related bot interactions.
 
-### WHO DO WE SHARE DATA WITH?
+## 2. Data We Process
 
-We do not share any data with third parties.
+TWiz processes and may store the following categories of data to provide features:
 
-### HOW LONG DO WE STORE DATA FOR?
+### A) Discord and Configuration Data
 
-Any other data we store connected to a guild or channel is deleted when the bot is removed from the guild or channel for up to 30 days.
+- Guild (server) IDs and channel IDs
+- Bot configuration values (for example prefix, world, feature toggles)
+- Monitoring subscriptions and settings (such as conquer monitor rules)
 
-### HOW CAN I CONTACT YOU IF I HAVE CONCERNS ABOUT YOUR BOT?
+### B) Command and Message Inputs
 
-If you have any concerns you can contact me in the forum thread or send me a DM on the website (https://forum.tribalwars.net/index.php?threads/twiz-unofficial-discord-bot.283086/)
+- Command parameters sent to TWiz
+- Message fragments needed for features (for example village coordinates, report links, and report tags)
 
-### HOW CAN I REQUEST DATA TO BE REMOVED?
+Most regular chat content is processed in-memory for feature execution and is not stored as full message history.
 
-As we do not store any personally identifiable data you cannot request it to be removed.
+### C) Report Screenshot Metadata
+
+When report features are used, TWiz may store metadata such as:
+
+- guild ID;
+- world/village references;
+- report identifier/hash;
+- screenshot URL (typically a Discord CDN URL);
+- timestamp of the report snapshot.
+
+### D) Operational Logs and Optional Telemetry
+
+TWiz may log operational events and errors for reliability and debugging. Logs and optional telemetry can include:
+
+- command/operation names;
+- status and duration;
+- guild ID and channel ID;
+- coarse error type.
+
+If enabled by the operator, third-party observability providers (for example Sentry or New Relic) may receive relevant diagnostic events.
+
+## 3. Why We Process Data
+
+We process data to:
+
+- provide bot functionality;
+- store configuration and server-specific settings;
+- deliver monitoring/report features;
+- maintain service reliability, security, and abuse prevention;
+- troubleshoot issues and improve performance.
+
+## 4. How Data Is Shared
+
+We do not sell personal data.
+
+Data may be shared only when necessary to operate TWiz, including with:
+
+- Discord (message delivery, attachments, API interactions);
+- infrastructure and hosting providers used by the bot operator;
+- optional observability providers (if enabled by configuration);
+- legal authorities when required by applicable law.
+
+## 5. Data Retention
+
+TWiz retains data for as long as needed to operate features and maintain service integrity.
+
+- Configuration and feature data may be retained while TWiz is used in a server.
+- Some records may remain in backups or maintenance snapshots for a limited period.
+- Deletion timing may vary based on operational constraints and legal requirements.
+
+## 6. Security
+
+We use reasonable technical and organizational measures to protect data. However, no method of storage or transmission is completely secure, and absolute security cannot be guaranteed.
+
+## 7. Your Choices and Requests
+
+Server administrators can control many settings directly via bot configuration commands (including enabling/disabling certain features).
+
+For privacy questions or deletion requests, contact the operator through the channels listed below.
+
+## 8. Children's Privacy
+
+TWiz is not directed to children under the age required by Discord's platform rules. If you believe data was provided inappropriately, contact us for review.
+
+## 9. International Processing
+
+Depending on hosting and platform infrastructure, data may be processed in different countries. By using TWiz, you understand that such transfers may occur.
+
+## 10. Changes to This Policy
+
+We may update this Privacy Policy from time to time. Continued use of TWiz after updates means you accept the revised policy.
+
+## 11. Contact
+
+For privacy-related questions or requests:
+
+- Forum thread: https://forum.tribalwars.net/index.php?threads/twiz-unofficial-discord-bot.283086/
