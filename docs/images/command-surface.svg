@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">TWiz command surface overview</title>
+  <desc id="desc">Diagram showing currently available hybrid commands, monitor and config groups, and automation features.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f8ff" />
+      <stop offset="100%" stop-color="#eef7f2" />
+    </linearGradient>
+    <style>
+      .title { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #0f2f43; }
+      .subtitle { font: 500 16px 'Segoe UI', Tahoma, sans-serif; fill: #38586d; }
+      .box-title { font: 700 20px 'Segoe UI', Tahoma, sans-serif; fill: #123347; }
+      .box-line { font: 500 14px 'Segoe UI', Tahoma, sans-serif; fill: #2a4a5f; }
+      .chip { font: 700 12px 'Segoe UI', Tahoma, sans-serif; fill: #0f2f43; }
+      .line { stroke: #8ea7ba; stroke-width: 2; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="url(#bg)" />
+
+  <text x="600" y="70" text-anchor="middle" class="title">TWiz Command Surface</text>
+  <text x="600" y="98" text-anchor="middle" class="subtitle">Current public release: hybrid commands (slash + prefix) plus automatic message features</text>
+
+  <rect x="480" y="130" width="240" height="78" rx="14" fill="#d9edf9" stroke="#6f93ab" />
+  <text x="600" y="162" text-anchor="middle" class="box-title">TWiz</text>
+  <text x="600" y="184" text-anchor="middle" class="box-line">Discord bot commands</text>
+
+  <line x1="600" y1="208" x2="170" y2="250" class="line" />
+  <line x1="600" y1="208" x2="445" y2="250" class="line" />
+  <line x1="600" y1="208" x2="755" y2="250" class="line" />
+  <line x1="600" y1="208" x2="1030" y2="250" class="line" />
+
+  <rect x="30" y="250" width="280" height="170" rx="14" fill="#ffffff" stroke="#8ea7ba" />
+  <text x="170" y="283" text-anchor="middle" class="box-title">General</text>
+  <text x="52" y="314" class="box-line">/help</text>
+  <text x="52" y="338" class="box-line">/ping</text>
+  <text x="52" y="362" class="box-line">/scripts</text>
+  <text x="52" y="386" class="box-line">/privacy</text>
+
+  <rect x="305" y="250" width="280" height="170" rx="14" fill="#ffffff" stroke="#8ea7ba" />
+  <text x="445" y="283" text-anchor="middle" class="box-title">Configuration Group</text>
+  <text x="327" y="314" class="box-line">/config (show)</text>
+  <text x="327" y="338" class="box-line">/config prefix</text>
+  <text x="327" y="362" class="box-line">/config world, channel_world</text>
+  <text x="327" y="386" class="box-line">/config delete_report_messages</text>
+
+  <rect x="615" y="250" width="280" height="170" rx="14" fill="#ffffff" stroke="#8ea7ba" />
+  <text x="755" y="283" text-anchor="middle" class="box-title">Game Commands</text>
+  <text x="637" y="314" class="box-line">/tribe, /player, /reports</text>
+  <text x="637" y="338" class="box-line">/circ, /stronghold</text>
+  <text x="637" y="362" class="box-line">/graph od, /graph score, /graph villages</text>
+  <text x="637" y="386" class="box-line">/map generate</text>
+
+  <rect x="890" y="250" width="280" height="170" rx="14" fill="#ffffff" stroke="#8ea7ba" />
+  <text x="1030" y="283" text-anchor="middle" class="box-title">Monitor Group</text>
+  <text x="912" y="314" class="box-line">/monitor (list)</text>
+  <text x="912" y="338" class="box-line">/monitor add scope target</text>
+  <text x="912" y="362" class="box-line">/monitor remove scope target</text>
+  <text x="912" y="386" class="box-line">(tribe + player monitoring)</text>
+
+  <line x1="445" y1="420" x2="445" y2="458" class="line" />
+  <line x1="755" y1="420" x2="755" y2="458" class="line" />
+
+  <rect x="305" y="458" width="280" height="170" rx="14" fill="#ffffff" stroke="#8ea7ba" />
+  <text x="445" y="491" text-anchor="middle" class="box-title">Automatic Features</text>
+  <text x="327" y="522" class="box-line">Village coords in chat</text>
+  <text x="327" y="546" class="box-line">Public report screenshots</text>
+  <text x="327" y="570" class="box-line">[report] tag screenshots</text>
+  <text x="327" y="594" class="box-line">tribal-reports link screenshots</text>
+
+  <rect x="615" y="458" width="280" height="170" rx="14" fill="#ffffff" stroke="#8ea7ba" />
+  <text x="755" y="491" text-anchor="middle" class="box-title">Prefix Support</text>
+  <text x="637" y="522" class="box-line">Most commands support both</text>
+  <text x="637" y="546" class="box-line">slash and prefix usage</text>
+  <text x="637" y="570" class="box-line">Set with /config prefix</text>
+  <text x="637" y="594" class="box-line">Use unique prefix to avoid overlap</text>
+
+  <rect x="472" y="660" width="256" height="44" rx="22" fill="#d4efe0" stroke="#72a285" />
+  <text x="600" y="688" text-anchor="middle" class="chip">Context menu: Screenshot Report</text>
+</svg>

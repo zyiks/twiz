@@ -1,45 +1,103 @@
-# Live Conquers
+# Conquer Alerts
 
-*You need "Manage Server" or "Administrator" permissions to use these commands.*
+Conquer alerts are managed with the `/monitor` command group.
 
-This command allows to set channels as monitor channels, where the bot will post desired bot conquers with a delay of around one minute. 
+TWiz fetches conquer updates in the background (roughly once per minute) and sends digest messages to channels with active monitor subscriptions.
 
-### Adding monitors
+Why teams use this:
 
-You need to add a monitor for each tribe seperately. For "monitor groups" it is recommended to make seperate channels.
+- Track gains/losses without manually refreshing external tools
+- Keep Discord war rooms updated in near real time
+- Separate strategic channels by target scope (tribe-focused vs player-focused)
 
->!addmonitor \<tribe tag> \<gain> \<loss> \<barbarian> \<self conquer> \<internal>
+## `/monitor list`
 
-The first parameter is the **tribe tag**. This should be set to the tribe you want conquer information about. 
+Shows monitor subscriptions for the current channel.
 
-If the tribe tag contains spaces, surround it with quotation marks.
+Parameters:
 
-The following parameters have to be answered with a **yes** or **no**. All the parameters have to be answered in order for the tribe to be monitored:
+- `scope` (optional): `all`, `tribe`, or `player` (default: `all`)
 
-- gain *i.e. Show conquers, where the village is taken by the tribe*
-- loss *i.e. Show conquers, where the village gets taken from tribe*
-- barbarian *i.e. Show conquers, where the village taken was a barbarian village*
-- self conquer *i.e. Show conquers, where the original village owner was the same as the taker*
-- internal - *i.e. Show conquers, where the original village owner belongs to the same tribe as the taker*
+Examples:
 
-**NB! When adding the monitor, it is important to remember the world preference order: 1) Channel 2) Global**
+- `/monitor list`
+- `/monitor list scope:tribe`
+- `/monitor list scope:player`
 
-Example:
+Why you would use it:
 
->!addmonitor Cicada no yes no no yes
+- Audit what is actually being monitored in this channel
+- Confirm whether toggles are active before reporting "missing alerts"
 
-## Listing monitors
+## `/monitor add`
 
-The following command displays all the active monitors in the channel.
+Creates or edits a monitor for a tribe or player in the current channel.
 
->!listmonitor
+Parameters:
 
-## Removing monitors
+- `scope` (required): `tribe` or `player`
+- `target` (required): tribe tag or player name to monitor
 
-The following command removes all the monitors about the given tribe tag from the current channel.
+Permissions and requirements:
 
->!clearmonitor \<tribe tag>
+- User must have `Manage Server`
+- Channel must allow TWiz to `Send Messages` and `Embed Links`
+- World must be configured for channel/server
 
-Example:
+Recommended pre-check:
 
->!clearmonitor Cicada
+- Run `/doctor` in the monitor channel before adding subscriptions.
+- For another channel, run `/doctor channel:#your-channel`.
+
+After command submission, TWiz opens an interactive toggle panel.
+
+Toggle meanings:
+
+- Gains: village gained by monitored target
+- Losses: village lost by monitored target
+- Barbarian: events involving barbarian ownership
+- Self-Conquer: same owner before/after (self retake)
+- Internal: conquer inside the same tribe
+
+For new monitors, all toggles default to enabled.
+
+Why this command matters:
+
+- One command gives you granular event filtering for each monitored target.
+- You can keep only relevant events (for example losses only) and reduce channel noise.
+- `/doctor` helps you confirm channel permissions first, so monitor digests do not silently fail.
+
+Examples:
+
+- Tribe example: `/monitor add scope:tribe target:TAG`
+- Player example: `/monitor add scope:player target:PlayerName`
+
+## `/monitor remove`
+
+Removes a monitor subscription from the current channel.
+
+Parameters:
+
+- `scope` (required): `tribe` or `player`
+- `target` (required): tribe tag or player name to stop monitoring
+
+Examples:
+
+- Tribe example: `/monitor remove scope:tribe target:TAG`
+- Player example: `/monitor remove scope:player target:PlayerName`
+
+Why you would use it:
+
+- Clean up old targets after diplomacy changes or world phase shifts
+- Keep digest volume manageable in busy channels
+
+## Channel-specific behavior
+
+Monitor subscriptions are channel-local.
+If you need separate monitor profiles, use separate channels.
+
+Example setup pattern:
+
+- `#conquer-gains`: gains-focused toggles
+- `#conquer-losses`: losses-focused toggles
+- `#conquer-special`: self/internal/barbarian investigations

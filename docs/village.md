@@ -1,14 +1,33 @@
-# Village lookup
+# Village Lookup
 
-Village lookup works without using any commands. The bot first checks all messages for possible coordinates in the following formats:
+Village lookup is automatic and does not require a command.
+It is one of the most-used quality-of-life features in active Discord planning channels.
 
- - 000|000
- - 000-000
+When village coordinate resolution is enabled, TWiz scans messages for coordinates in these formats:
 
-eg. 
+- `000|000`
+- `000-000`
 
-![Example](images/village/1.png "Example")
+Coordinates can appear inside regular text and you can include multiple coordinates in one message.
 
-These coordinates can be inside bigger texts or even several coordinates in one message.
+TWiz replies with village ownership/link details using the active world context.
 
-*Remember, the bot first checks the channel world, then the global world!*
+Why this is useful:
+
+- Saves time when players paste many coords during ops
+- Reduces copy/paste to external websites for quick ownership checks
+
+## World and settings behavior
+
+- World selection follows channel override first, then global world.
+- Auto lookup is active when a valid world is configured.
+
+Related commands:
+
+- `/config world world:<short-name>`
+- `/config channel_world world:<short-name>`
+- `/config`
+
+## Operational note
+
+If no world is configured, TWiz cannot resolve village coordinates and will stay silent for those messages.

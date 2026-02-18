@@ -1,9 +1,34 @@
-# Stronghold coin gain
+# Stronghold Coin Rewards
 
-This command calculates stronghold gain for each member of the attacking tribe when knocking down one level.
+Use `/stronghold` to estimate coin rewards from stronghold attacks.
+This is mainly a planning command for deciding whether a target is worth coordinated action.
 
-> !stronghold \<attacker> \<defender>
+## Command
 
-Attacker and defender must both be tribe tags.
+- `/stronghold attacker:<tribe-tag> defender:<tribe-tag>`
 
-If there is a space in the tribe tag, surround the tribe tag with quotation marks.
+Both `attacker` and `defender` are tribe tags.
+
+Requirements:
+
+- Active world configured for the channel/server
+
+Output:
+
+- Total estimated coin reward
+- Per-player reward breakdown for attacker members
+
+Why this is useful:
+
+- Compare expected reward before committing attacks
+- Share reward expectations clearly inside tribe planning channels
+- Reduce manual calculations during fast decision windows
+
+Autocomplete:
+
+- Tribe autocomplete is available for both attacker and defender fields.
+
+Examples:
+
+- Slash: `/stronghold attacker:ATK defender:DEF`
+- Prefix: `!stronghold ATK DEF`

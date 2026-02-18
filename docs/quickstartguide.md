@@ -1,48 +1,76 @@
 # Quick Start Guide
 
-### Adding the bot to your Discord server
+This guide is written for server admins who are setting up TWiz for real day-to-day use.
+Each step includes why it matters so you can decide what to configure immediately and what can wait.
+
+## 1) Invite TWiz to your Discord server
 
 Prerequisites:
-- You have "Manage Server" or "Administrator" permission on the server.
 
-[If you have filled all of the prerequisites, open this link in a new tab.](https://discordapp.com/oauth2/authorize?&client_id=591226665951297537&scope=bot&permissions=519232)
+- You have `Manage Server` or `Administrator` permission in the target server.
 
-After opening the tab, you will be greeted with the following pop-up. 
+Invite link:
 
-Under **Add to Server**, select the server you want to add it to. 
+- https://discord.com/oauth2/authorize?client_id=591226665951297537&scope=bot%20applications.commands&permissions=519232
 
-Then click **Continue**.
+TWiz works best with these permissions:
 
-*If you do not see the server, it's either already added or the prerequisites are not filled.*
+- Required: `View Channel`, `Send Messages`, `Embed Links`
+- Recommended: `Attach Files` (graphs/maps/report screenshots), `Manage Messages` (optional report source cleanup)
 
+Why this matters:
 
-![Add To Server Image](images/quickstartguide/1.png "Add To Server Image")
+- Without `Embed Links`, many TWiz responses lose useful formatting and context.
+- Without `Attach Files`, maps, graphs, and report screenshots cannot be posted.
+- Missing `Manage Messages` does not break core features, but report-cleanup options may not work.
 
-After that, you will see a list of permissions the bot wants from your server. 
+## 2) Set your world
 
-Verify that you are comfortable with the **permissions**.
+Most Tribal Wars commands need a configured world.
 
-Then click **Authorize**.
+- Set a global world for the server:
+  - `/config world world:en112`
+- Optionally set a channel-specific world:
+  - `/config channel_world world:en113`
+- Check active settings:
+  - `/config show`
 
-*It can be dangerous to give bots more permissions than required. Malicious bots that ask for too many permissions can snoop in on all your conversations, kick/ban users or delete your server entirely.*
+Use world short names such as `en112`, `de203`, `us91`.
 
-<details>
-  <summary>Permission explanations</summary><p>
-  
-- **Read Messages** - Needs to see incoming messages to respond to commands
-- **Send Messages** - Needs to respond to commands
-- **Manage Messages** - Needs to remove reactions from own posts to allow navigation on commands like !help, also deletes command messages after responding
-- **Embed Links** - Allows to link to reports and other tribalwars links
-- **Attach Files** - Allows to upload report images to Discord
-- **Add Reactions** - Needs to add navigation commands to own posts so people can use them
-- **Mention @everyone, @here, and All Roles** - May be used for future features, currently unused
-- **Read message history** - Needs to be able to see old posts from bot to enable navigation and to automatically delete them.
-</p></details>
+Why this matters:
 
-![Permissions image](images/quickstartguide/2.png "Permissions image")
+- If no world is set, most game-data commands fail with "No world configured".
+- If the wrong world is set, lookups will return correct data for the wrong world, which is usually worse than an explicit error.
 
-If you see the following image, you have succeeded in adding the bot to your server.
+## 3) Verify TWiz in a channel
 
-![Authorized image](images/quickstartguide/3.png "Authorized image")
+Run these once:
 
-You can see all the commands the bot has available with **!help** and go there from your own, or follow the guides in the sidebar to the left.
+- `/help` to open the interactive command guide
+- `/doctor` to verify TWiz permissions in the current channel
+- `/config` to confirm your server configuration is visible
+- `/tribe tag:TAG` or `/player name:PlayerName` for a quick data check
+
+Why this matters:
+
+- `/doctor` catches channel permission problems before users start reporting missing alerts or failed screenshots.
+- A quick `/tribe` or `/player` lookup confirms that world and data access are configured correctly.
+- `/config` helps admins verify prefix/world settings before users start using commands heavily.
+
+## 4) Optional quality-of-life settings
+
+- `/config prefix prefix:?` (if you want a unique prefix)
+- `/config channel_world world:en113` (if a specific channel should use another world)
+- `/config delete_report_messages enabled:false` (recommended if you want to keep original report links visible)
+
+Why this matters:
+
+- A unique prefix prevents overlap when multiple bots respond to similar text commands.
+- Channel world overrides let one Discord server support multiple Tribal Wars worlds.
+- Keeping `delete_report_messages` disabled is safer when users want auditability and original links preserved.
+
+## Legacy note
+
+TWiz supports both slash commands and prefix commands for most user features.
+
+If your server has many bots, set a unique TWiz prefix to avoid command overlap.

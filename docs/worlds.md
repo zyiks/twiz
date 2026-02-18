@@ -1,37 +1,59 @@
-# Worlds
+# World Selection
 
-*You need "Manage Server" or "Administrator" permissions to use these commands.*
+Most TWiz game-data commands need an active world.
+If world context is wrong, command results can look valid but refer to the wrong game world.
 
-### World configuration types
+## Resolution order
 
-There are 2 types of world configration in TWiz:
+TWiz resolves world context in this order:
 
-1. Channel World
-2. Global/default World
+1. Channel world override (`/config channel_world`)
+2. Global server world (`/config world`)
 
-Most commands will first check if the channel world is set and if its not, then the global world, and their returned information is based on the world found first.
+If neither is set, world-dependent commands return:
 
-For both type of worlds, you need to use the shorthand name for the world, eg. en110
+- `No world configured for this server/channel.`
 
-You can usually find this shorthand name from the domain name in the world, eg. https://**en110**.tribalwars.net or your regions equivalent.
+Why this order is useful:
 
-### Setting global world
+- You can run one server-wide default world for most channels.
+- Strategy channels for other worlds can override only where needed.
 
-Global world is used for every Discord channel, that doesn't have a channel world set.
+## World format
 
-> !set_world \<world_name>
+Use short world names such as:
 
-Example:
+- `en112`
+- `de203`
+- `us91`
 
-> !set_world en110
+You can usually get this from the world domain prefix.
+Example: `https://en112.tribalwars.net` -> `en112`.
 
-### Setting channel world
+## Commands
 
-> !set_channel_world \<world_name>
+Global world:
 
-Example:
+- `/config world world:<short-name>`
 
-> !set_channel_world en110
+Channel override:
 
+- `/config channel_world world:<short-name>`
 
-*Remember, if you changed your prefix, you need to use the new one you set!*
+Reset channel override:
+
+- `/config channel_world`
+
+View current values:
+
+- `/config show`
+
+Typical admin pattern:
+
+- Set one global world for the main community channel set.
+- Override specific channels used by cross-world teams.
+
+## Smart suggestions
+
+If a world is not found exactly, TWiz can show clickable suggestions.
+Clicking one applies it immediately.

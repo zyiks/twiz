@@ -1,68 +1,73 @@
-# Graph generation
+# Graph Commands
 
-### Graph Types available
+TWiz graph commands are under the `/graph` slash-command group and require an active world.
+Use graphs when snapshots and rankings are not enough and you need trend direction over time.
 
-There are 3 main graph types to choose from:
+## Available commands
 
-- od
-- score
-- villages
+- `/graph od`
+- `/graph score`
+- `/graph villages`
 
-The following commands need a full case-insensitive name/tag match for each entry.
+All three commands use target slots (`who_1` to `who_5`).
+`who_1` is required and `who_2`..`who_5` are optional.
 
-### Generating OD Graphs
+## `/graph od`
 
-The OD command has three parameters
+Parameters:
 
-> !od \<odtype> \<tribeorplayer> \<who>
+- `odtype`: `all`, `a`, `d`, `s`
+- `tribe_or_player`: `t` or `p`
+- `who_1`: first target (required)
+- `who_2`..`who_5`: additional targets (optional)
 
-The first parameter, **odtype**, lets you choose from the following graph subtypes:
+Notes:
 
- - all	*i.e. attack + defense + support*
- - a	*i.e. attack*
- - d	*i.e. defense*
- - s	*i.e. support NB! This type is only available for players*
- 
-The second parameter, **tribeorplayer**, lets you specify whetever you are looking to generate player or tribe graphs.
+- `s` (support ODS) is available only for players.
+- If you graph players, TWiz may include a dashed tribe-average line for context.
 
-- t *i.e. tribe graph*
-- p *i.e. player graph*
+Why you would use it:
 
-The third parameter, **who**, is a **comma "," seperated** list of players or tribes you want to generate the graph about.
+- Spot offensive spikes before major pushes
+- Identify defenders carrying most of the tribe load
+- Compare individuals against tribe-average performance
 
-- eg.  The Sleepless Elite,gpttkftkf,Yoghurt BabaYaga
+## `/graph score`
 
-By combining different parameter types, you can make different graphs. Here are a few possible command examples.
+Parameters:
 
-- !od all p The Sleepless Elite,gpttkftkf,Yoghurt BabaYaga *this command would show you a graph of total OD for the three specified players.*
-- !od d t Cicada *this command would generate a od defensive graph about the tribe Cicada*
+- `tribe_or_player`: `t` or `p`
+- `who_1`: first target (required)
+- `who_2`..`who_5`: additional targets (optional)
 
+Why you would use it:
 
-### Generating Score Graphs
+- Track growth momentum, not only current rank
+- See whether gains are steady or one-time jumps
 
-> !score \<tribe or player> \<who>
+## `/graph villages`
 
-The first parameter, **tribe or player**, lets you specify whetever you are looking to generate player or tribe graphs.
+Parameters:
 
-- t *i.e. tribe graph*
-- p *i.e. player graph*
+- `tribe_or_player`: `t` or `p`
+- `who_1`: first target (required)
+- `who_2`..`who_5`: additional targets (optional)
 
-The second parameter, **who**, is a **comma "," seperated** list of players or tribes you want to generate the graph about.
+Why you would use it:
 
-- eg.  The Sleepless Elite,gpttkftkf,Yoghurt BabaYaga
+- Visualize expansion or collapse speed
+- Confirm whether recent wars changed footprint materially
 
+## Cooldown
 
-### Generating Village Graphs
+- A per-user cooldown is applied (30 seconds for regular users).
 
-> !villages \<tribe or player> \<who>
+## Prefix note
 
-The first parameter, **tribe or player**, lets you specify whetever you are looking to generate player or tribe graphs.
+- Graph commands are documented under `/graph ...`.
 
-- t *i.e. tribe graph*
-- p *i.e. player graph*
+## Examples
 
-The second parameter, **who**, is a **comma "," seperated** list of players or tribes you want to generate the graph about.
-
-- eg.  The Sleepless Elite,gpttkftkf,Yoghurt BabaYaga
-
-![Example](images/odgraph/1.png "Example")
+- `/graph od odtype:all tribe_or_player:p who_1:Player1 who_2:Player2`
+- `/graph score tribe_or_player:t who_1:TAG1 who_2:TAG2`
+- `/graph villages tribe_or_player:p who_1:Player1`

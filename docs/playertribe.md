@@ -1,27 +1,45 @@
-# Player and tribe lookup
+# Player and Tribe Lookup
 
-Both commands try to find the closest match for your input in the world. 
+These commands use the active world and are useful for diplomacy, scouting, target prioritization, and activity tracking.
 
-Sorted by points.
+## `/tribe` (alias: `t`)
 
-If no name/tag is given, a Top 10 list is returned.
+Finds tribes by tag and returns rank/points/member/village overview.
 
-### Player Lookup
+Why you would use it:
 
->!p \<name>
+- Quick diplomatic context before contact or conflict
+- Compare tribe size and growth pace without leaving Discord
+- Verify tag spelling before monitor/map/graph commands
 
-eg.
+Parameters:
 
->!p One Last
+- `tag` (optional): tribe tag text
 
-![Example1](images/playertribe/1.png "Example1")
+Example:
 
-### Tribe Lookup
+- Slash: `/tribe tag:TAG`
+- Prefix: `!tribe TAG` or `!t TAG`
 
->!t \<tag>
+If no tag is provided, TWiz returns top matching tribes from the world.
 
-eg. 
+## `/player` (alias: `p`)
 
->!t Cicada
+Finds players by name and returns player/tribe/village summary.
 
-![Example2](images/playertribe/2.png "Example2")
+Why you would use it:
+
+- Fast checks during ops calls ("who is this player and where are they?")
+- Identify whether a player has a tribe and how large their footprint is
+- Confirm exact player names before adding to lists or comparison commands
+
+Parameters:
+
+- `name` (optional): player name text
+
+Example:
+
+- Slash: `/player name:SomePlayer`
+- Prefix: `!player SomePlayer` or `!p SomePlayer`
+
+If no name is provided, TWiz returns top matching players from the world.
